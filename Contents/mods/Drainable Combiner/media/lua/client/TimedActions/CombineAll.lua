@@ -1,4 +1,7 @@
+require "TimedActions/ISBaseTimedAction"
 require "TimedActions/ISConsolidateDrainable"
+ISCombineAll = ISBaseTimedAction:derive("ISCombineAll");
+
 
 ISCombineAll_OVERWRITE_isValid = ISConsolidateDrainable.isValid
 function ISCombineAll:isValid()
