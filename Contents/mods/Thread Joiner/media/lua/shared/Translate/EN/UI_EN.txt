@@ -1,3 +1,3 @@
 UI_EN = {
-    UI_ContextMenu_CombineThread = "Combine Thread"
+    UI_ContextMenu_CombineAll = "Combine All"
 }

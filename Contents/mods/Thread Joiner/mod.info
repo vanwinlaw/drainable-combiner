@@ -1,5 +1,5 @@
-name=Thread Joiner
-id=ThreadJoiner
-description= This mod allows for a quicker way to combine all thread in a players inventory.
+name=Drainable Combiner
+id=DrainableCombiner
+description= This mod allows for a quicker way to combine all of a selected drainable in a players inventory.
 poster=poster.png
 versionMin=41.65
