@@ -12,12 +12,12 @@ This functionality only works for items with a `conConsolidate = true` according
 
 
 ## Status
-| Mode | Works |
-| ----- | ----- |
-| Singleplayer | ✔️ |
-| Splitscreen Co-op | ⚠️ - Unverified |
-| Multiplayer | ⚠️ - Unverified |
+| Mode | Works | Notes |
+| ----- | ----- | ----- | 
+| Singleplayer | ✔️ | |
+| Splitscreen Co-op | ⚠️ - Unverified | |
+| Multiplayer | ✔️ | Seems to work fine on 41.66 |
 
 
 ## Mod Disclaimer
-Use at your own risk. Have fun!
+Use at your own risk. Have fun! If you have issues and you can accurately describe them so I can try and fix, let me know!
