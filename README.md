@@ -20,5 +20,10 @@ This functionality only works for items with a `conConsolidate = true` according
 ### What's next?
 I have intentions to work towards compatability with backpacks/containers. 
 
+### Translations
+If you are fluent in a language and would like to contribute to this mod to make it better, please feel free to reach out and provide the following translations with your country code/language. Or open up a PR yourself! 
+
+See existing text to translate [here](https://github.com/vanwinlaw/drainable-combiner/blob/master/Contents/mods/Drainable%20Combiner/media/lua/shared/Translate/EN/UI_EN.txt). 
+
 ## Mod Disclaimer
 Use at your own risk. This is just an excuse for me to play around with PZ modding, however I hope others find it useful and that it works as well.
