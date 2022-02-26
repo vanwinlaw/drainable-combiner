@@ -15,10 +15,10 @@ Right click on the drainable item in your inventory and click "Combine All". You
 ![image](https://user-images.githubusercontent.com/15162189/155799635-44a6f4cb-7091-4d68-9248-7c923c96602d.png)
 
 #### Note
-This functionality only works for items with a `conConsolidate = true` according to Project Zomboid. Things like Car Batteries/etc will not present the option.
+This functionality only works for items with a `canConsolidate = true` according to Project Zomboid. Things like Car Batteries/etc will not present the option.
 
 ### What's next?
-I have intentions to work towards compatability with backpacks/containers. 
+I have intentions to work towards compatability with backpacks/containers. Have other ideas? Let me know, but no promises!
 
 ### Translations
 If you are fluent in a language and would like to contribute to this mod to make it better, please feel free to reach out and provide the following translations with your country code/language. Or open up a PR yourself! 
