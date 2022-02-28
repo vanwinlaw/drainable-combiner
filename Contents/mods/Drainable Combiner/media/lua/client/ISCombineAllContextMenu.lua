@@ -6,18 +6,11 @@ function ISCombineAllContextMenu.DoContextMenu(player, context, items)
 
     local contextItem = items[1]
     if canCombineAll(combineable, player) then
-        context:addOption(getText("UI_ContextMenu_CombineAll"), contextItem, ISCombineAllContextMenu.onCombineAll,
-            player)
+        context:addOption(getText("UI_ContextMenu_CombineAll"), items, ISCombineAllContextMenu.onCombineAll, player)
     end
 end
 
-
-
 function ISCombineAllContextMenu.onCombineAll(items, player)
-    publishAction(items, player)
-end
-
-function ISCombineAllContextMenu.onCombineAllComplete(items, player)
     publishAction(items, player)
 end
 
@@ -39,7 +32,7 @@ function canCombineAll(items, player)
             end
         end
 
-        if type[1] == type[2] and (type[1]:getDelta() < 1.0 and type[1]:getDelta() > 0.0) then --if collapsed, account for ghost row
+        if type[1] == type[2] and (type[1]:getDelta() < 1.0 and type[1]:getDelta() > 0.0) then -- if collapsed, account for ghost row
             totalCombineable = totalCombineable - 1
         end
 
@@ -52,13 +45,16 @@ end
 
 function categorizeCombineable(items, existingCombineable)
     local combineable = existingCombineable ~= nil and existingCombineable or {}
+    local types = {}
 
     for _, v in pairs(items) do
         if instanceof(v, "DrainableComboItem") == true then -- if expanded
-            if combineable[v:getType()] ~= nil then -- if the type already exists in table
-                table.insert(combineable[v:getType()], v)
-            else
-                combineable[v:getType()] = {v}
+            if v:getDelta() < 1.0 and v:getDelta() > 0.0 then
+                if combineable[v:getType()] ~= nil then -- if the type already exists in table
+                    table.insert(combineable[v:getType()], v)
+                else
+                    combineable[v:getType()] = {v}
+                end
             end
         elseif type(v) == "table" then -- if collapsed
             local tableItems = v.items
@@ -66,29 +62,33 @@ function categorizeCombineable(items, existingCombineable)
         end
     end
 
-    return combineable
+    for _, v in pairs(combineable) do
+        if #v > 1 then
+            local type = v[1]:getType()
+            table.insert(types, type)
+        end
+    end
+
+    return combineable, types
 end
 
 function publishAction(items, player)
-    local consolidateableItems = getConsolidateable(items)
-    local firstItem = consolidateableItems[1]
-    local lastItem = consolidateableItems[#consolidateableItems]
+    local combineableItems = {}
+    local types = {}
+    combineableItems, types = categorizeCombineable(items)
 
-    if firstItem ~= lastItem then
-        local action = ISCombineAll:new(player, firstItem, lastItem, 90)
-        action:setOnComplete(ISCombineAllContextMenu.onCombineAllComplete, consolidateableItems, player)
-        ISTimedActionQueue.add(action)
-    end
-end
+    local typeToCombine = types[1]
+    if typeToCombine ~= nil then
+        local itemsToCombine = combineableItems[typeToCombine]
+        local firstItem = itemsToCombine[1]
+        local lastItem = itemsToCombine[#itemsToCombine]
 
-function getConsolidateable(items)
-    local consolidateable = {}
-    for _, v in pairs(items) do
-        if v:getDelta() < 1.0 and v:getDelta() > 0.0 then
-            table.insert(consolidateable, v)
+        if firstItem ~= lastItem then
+            local action = ISCombineAll:new(player, firstItem, lastItem, 90)
+            action:setOnComplete(ISCombineAllContextMenu.onCombineAll, items, player)
+            ISTimedActionQueue.add(action)
         end
     end
-    return consolidateable
 end
 
 Events.OnFillInventoryObjectContextMenu.Add(ISCombineAllContextMenu.DoContextMenu);
