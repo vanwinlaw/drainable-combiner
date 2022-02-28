@@ -47,7 +47,20 @@ if getDebug() then
             player:getInventory():AddItem("Base.Glue", .3)
             player:getInventory():AddItem("Base.Glue", .3)
 
+            -- Combine down to 3.6 total units of Wood Glue (Expanded/Collapsed)
+            player:getInventory():AddItem("Base.Woodglue", .1)
+            player:getInventory():AddItem("Base.Woodglue", .2)
+            player:getInventory():AddItem("Base.Woodglue", .8)
+            player:getInventory():AddItem("Base.Woodglue", .4)
+            player:getInventory():AddItem("Base.Woodglue", .2)
+            player:getInventory():AddItem("Base.Woodglue", .1)
+            player:getInventory():AddItem("Base.Woodglue", .9)
+            player:getInventory():AddItem("Base.Woodglue", .2)
+            player:getInventory():AddItem("Base.Woodglue", .4)
+            player:getInventory():AddItem("Base.Woodglue", .3)
+
             -- Should not prompt for "Combine All" in collapsed or expanded state
+            -- Spawn in some more blow torch to validate that it isn't trying to merge in empty to full/etc or full to empty/etc
             player:getInventory():AddItem("Base.BlowTorch", 0.0)
             player:getInventory():AddItem("Base.BlowTorch", 0.2)
             player:getInventory():AddItem("Base.BlowTorch", 1.0)
