@@ -54,10 +54,18 @@ function categorizeCombineable(items, existingCombineable)
     for _, v in pairs(items) do
         if instanceof(v, "DrainableComboItem") == true then -- if expanded
             if v:getDelta() < 1.0 and v:getDelta() > 0.0 then
-                if combineable[v:getType()] ~= nil then -- if the type already exists in table
-                    table.insert(combineable[v:getType()], v)
+                if v:getName() == "Water Bottle" then
+                    if combineable["Water Bottle"] ~= nil then
+                        table.insert(combineable["Water Bottle"], v)
+                    else
+                        combineable["Water Bottle"] = {v}
+                    end
                 else
-                    combineable[v:getType()] = {v}
+                    if combineable[v:getType()] ~= nil then -- if the type already exists in table
+                        table.insert(combineable[v:getType()], v)
+                    else
+                        combineable[v:getType()] = {v}
+                    end
                 end
             end
         elseif type(v) == "table" then -- if collapsed
@@ -68,7 +76,7 @@ function categorizeCombineable(items, existingCombineable)
 
     for _, v in pairs(combineable) do
         if #v > 1 then
-            local type = v[1]:getType()
+            local type = v[1]:getName() == "Water Bottle" and v[1]:getName() or v[1]:getType()
             table.insert(types, type)
         end
     end

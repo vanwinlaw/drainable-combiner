@@ -65,6 +65,15 @@ if getDebug() then
         end
 
         if key == Keyboard.KEY_4 then
+            -- Combine across water bottles down to 1.2 total units of Water with 3 empty bottles
+            player:getInventory():AddItem("Base.WaterPopBottle", 0.2)
+            player:getInventory():AddItem("Base.BeerWaterFull", 0.2)
+            player:getInventory():AddItem("Base.WaterBottleFull", 0.3)
+            player:getInventory():AddItem("Base.WaterBottleFull", 0.3)
+            player:getInventory():AddItem("Base.WineWaterFull", 0.2)
+        end
+
+        if key == Keyboard.KEY_5 then
             -- Should not prompt for "Combine All" in collapsed or expanded state
             -- Spawn in some more blow torch to validate that it isn't trying to merge in empty to full/etc or full to empty/etc
             player:getInventory():AddItem("Base.BlowTorch", 0.0)
