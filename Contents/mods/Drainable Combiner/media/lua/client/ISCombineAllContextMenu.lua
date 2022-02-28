@@ -1,11 +1,8 @@
 ISCombineAllContextMenu = {};
 
 function ISCombineAllContextMenu.DoContextMenu(player, context, items)
-    local combineable = {}
-    combineable = categorizeCombineable(items)
-
     local contextItem = items[1]
-    if canCombineAll(combineable, player) then
+    if canCombineAll(items, player) then
         context:addOption(getText("UI_ContextMenu_CombineAll"), items, ISCombineAllContextMenu.onCombineAll, player)
     end
 end
@@ -15,10 +12,17 @@ function ISCombineAllContextMenu.onCombineAll(items, player)
 end
 
 function canCombineAll(items, player)
+    local combineable = {}
+    local types = {}
+    combineable, types = categorizeCombineable(items)
     local character = getSpecificPlayer(player)
     local inventory = character:getInventory()
 
-    for _, type in pairs(items) do
+    if #types == 0 then
+        return false
+    end
+
+    for _, type in pairs(combineable) do
         local totalCombineable = 0
 
         for _, item in pairs(type) do
