@@ -6,19 +6,14 @@ if getDebug() then
         --[[ 
             Test scenarios:
             Combineable:
-            - Single selected item (collapsed/uncollapsed) with more than 1 item where the delta is 0.0 < {delta} < 1.0
-
-            Non-combineable from 1 click:
-            - COLLAPSED Glue and COLLAPSED Thread
-            - COLLAPSED Glue and EXPANDED Thread
-            - EXPANDED Glue and COLLAPSED Thread
-            - EXPANDED Glue and EXPANDED Thread
+            - Selected combineable item(s) (collapsed/uncollapsed) with more than 1 item where the delta is 0.0 < {delta} < 1.0
 
             Non-combineable:
             - Stack of a single item where the delta is 0.0 < {delta} < 1.0 (ex. 1 Thread with delta of .3)
             - Stack of multiple items where one item with a delta of 0.0 < {delta} < 1.0 (ex. BlowTorch case below)
             - Stack of empty items
             - Stack of full items
+            - A shoe/other things that aren't combineable.
          ]]
 
         if key == Keyboard.KEY_1 then
