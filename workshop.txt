@@ -1,8 +1,12 @@
 version=1
 id=2765014037
 title=Drainable Combiner
-description=[h1][b]See the GitHub for details:[/b][/h1]
+description=[h1][b]Updates[/b][/h1]
+description=Changes will be uploaded on Monday's as they are available. Hot fixes will be pushed out as necessary in an attempt to keep the mod working with the most recent stable release.
 description=
-description=[h2][b][url=https://github.com/vanwinlaw/drainable-combiner]Github[/url][/b][/h2]
-tags=Build 41;Items;Multiplayer
+description=[h2][b]Source: [url=https://github.com/vanwinlaw/drainable-combiner]Github[/url][/b][/h2]
+description=
+description=[img]https://i.imgur.com/p7Fv1Z6.gif[/img]
+description=
+tags=Build 41;Interface;Items;Multiplayer
 visibility=public

@@ -5,8 +5,8 @@ A Project Zomboid mod that will combine all of a single selected drainable item 
 | Mode | Works | Notes |
 | ----- | ----- | ----- | 
 | Singleplayer | ✔️ | |
-| Splitscreen Co-op | ⚠️ - Unverified | |
 | Multiplayer | ✔️ | Seems to work fine on 41.66 |
+| Splitscreen Co-op | ⚠️ - Unverified | |
 
 
 ## How
@@ -16,9 +16,6 @@ Right click on the drainable item in your inventory and click "Combine All". You
 
 #### Note
 This functionality only works for items with a `canConsolidate = true` according to Project Zomboid. Things like Car Batteries/etc will not present the option.
-
-### What's next?
-I have intentions to work towards compatability with backpacks/containers. Have other ideas? Let me know, but no promises!
 
 ### Translations
 If you are fluent in a language and would like to contribute to this mod to make it better, please feel free to reach out and provide the following translations with your country code/language. Or open up a PR yourself! 
