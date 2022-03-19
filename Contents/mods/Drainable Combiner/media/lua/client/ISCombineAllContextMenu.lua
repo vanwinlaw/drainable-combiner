@@ -47,6 +47,10 @@ function canCombineAll(items, player)
     return true
 end
 
+function isWaterBottle(name)
+    return name == "Water Bottle" or name == "Water Bottle (Tainted)"
+end
+
 function categorizeCombineable(items, existingCombineable)
     local combineable = existingCombineable ~= nil and existingCombineable or {}
     local types = {}
@@ -54,11 +58,11 @@ function categorizeCombineable(items, existingCombineable)
     for _, v in pairs(items) do
         if instanceof(v, "DrainableComboItem") == true then -- if expanded
             if v:getDelta() < 1.0 and v:getDelta() > 0.0 then
-                if v:getName() == "Water Bottle" then
-                    if combineable["Water Bottle"] ~= nil then
-                        table.insert(combineable["Water Bottle"], v)
+                if isWaterBottle(v:getName()) then
+                    if combineable[v:getName()] ~= nil then
+                        table.insert(combineable[v:getName()], v)
                     else
-                        combineable["Water Bottle"] = {v}
+                        combineable[v:getName()] = {v}
                     end
                 else
                     if combineable[v:getType()] ~= nil then -- if the type already exists in table
@@ -76,7 +80,7 @@ function categorizeCombineable(items, existingCombineable)
 
     for _, v in pairs(combineable) do
         if #v > 1 then
-            local type = v[1]:getName() == "Water Bottle" and v[1]:getName() or v[1]:getType()
+            local type = isWaterBottle(v:getName()) and v[1]:getName() or v[1]:getType()
             table.insert(types, type)
         end
     end
