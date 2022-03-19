@@ -1,6 +1,9 @@
 version=1
 id=2765014037
 title=Drainable Combiner
+description=[h1][b]What does it do?[/b][/h1]
+description=Combine condenseable items with a single click. Will not work for items that are not condenseable such as batteries.
+description=
 description=[h1][b]Updates[/b][/h1]
 description=Changes will be uploaded on Monday's as they are available. Hot fixes will be pushed out as necessary in an attempt to keep the mod working with the most recent stable release.
 description=
