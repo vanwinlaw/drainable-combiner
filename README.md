@@ -31,3 +31,8 @@ See existing text to translate [here](https://github.com/vanwinlaw/drainable-com
 
 ## Mod Disclaimer
 Use at your own risk. This is just an excuse for me to play around with PZ modding, however I hope others find it useful and that it works as well.
+
+## Release
+- Remove the `ISCombineAlldebug.lua` file before releasing it to the workshop.
+- Update work notes in Steam to detail the functionality released.
+- Update GitHub releases.
