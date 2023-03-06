@@ -10,9 +10,10 @@ if getDebug() then
 
             Non-combineable:
             - Stack of a single item where the delta is 0.0 < {delta} < 1.0 (ex. 1 Thread with delta of .3)
-            - Stack of multiple items where one item with a delta of 0.0 < {delta} < 1.0 (ex. BlowTorch case below)
+            - Stack of multiple items where one item with a delta of 0.0 < {delta} < 1.0
             - Stack of empty items
             - Stack of full items
+            - Blowtorches (and ?) have had the consolidateable field set to false. So these are no longer combineable.
             - A shoe/other things that aren't combineable.
          ]]
 
