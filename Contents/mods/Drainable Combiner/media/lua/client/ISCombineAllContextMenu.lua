@@ -52,7 +52,7 @@ function categorizeCombineable(items, existingCombineable)
     local types = {}
 
     for _, v in pairs(items) do
-        if instanceof(v, "DrainableComboItem") == true then -- if expanded
+        if instanceof(v, "DrainableComboItem") == true and v:canConsolidate() == true then -- if expanded
             if v:getDelta() < 1.0 and v:getDelta() > 0.0 then
                 if v:getName() == "Water Bottle" then
                     if combineable["Water Bottle"] ~= nil then
