@@ -26,6 +26,7 @@ See existing text to translate [here](https://github.com/vanwinlaw/drainable-com
 - CN (Chinese)
 - EN (English)
 - FR (French)
+- IT (Italia)
 
 
 ## Mod Disclaimer
