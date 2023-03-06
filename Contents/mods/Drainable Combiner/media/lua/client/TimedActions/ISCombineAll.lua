@@ -23,6 +23,16 @@ function ISCombineAll:stop()
     ISCombineAll_OVERWRITE_stop(self)
 end
 
+ISCombineAll_OVERWRITE_nextItem = ISConsolidateDrainable.nextItem
+function ISCombineAll:nextItem()
+    ISCombineAll_OVERWRITE_nextItem(self)
+end
+
+ISCombineAll_OVERWRITE_runAgain = ISConsolidateDrainable.runAgain
+function ISCombineAll:runAgain()
+    ISCombineAll_OVERWRITE_runAgain(self)
+end
+
 ISCombineAll_OVERWRITE_perform = ISConsolidateDrainable.perform
 function ISCombineAll:perform()
     ISCombineAll_OVERWRITE_perform(self)
