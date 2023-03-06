@@ -73,7 +73,7 @@ if getDebug() then
             -- Spawn in some more blow torch to validate that it isn't trying to merge in empty to full/etc or full to empty/etc
             player:getInventory():AddItem("Base.BlowTorch", 0.0)
             player:getInventory():AddItem("Base.BlowTorch", 0.2)
-            player:getInventory():AddItem("Base.BlowTorch", 1.0)
+            player:getInventory():AddItem("Base.BlowTorch", 0.8)
         end
     end)
 end
